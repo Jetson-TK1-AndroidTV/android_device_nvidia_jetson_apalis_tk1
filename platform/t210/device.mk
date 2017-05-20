@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/firmware/fw_bcmdhd_56.bin:vendor/firmware/fw_bcmdhd.bin \
+    $(LOCAL_PATH)/firmware/nvram.txt:system/etc/nvram.txt
+
 PRODUCT_PACKAGES += \
     badblocks \
     e2fsck \
@@ -135,7 +139,7 @@ PRODUCT_PACKAGES += \
     resize2fs \
     tune2fs
 
-# Bluetooth USB
+# Bluetooth USB tools
 PRODUCT_PACKAGES += \
     btattach \
     hciattach \
@@ -143,7 +147,8 @@ PRODUCT_PACKAGES += \
     hcitool
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bt_vendor.conf:system/etc/bluetooth
+    $(LOCAL_PATH)/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf \
+    $(LOCAL_PATH)/firmware/BCM4354A2-13d3-3488.hcd:vendor/firmware/BCM4354A2-13d3-3488.hcd
 
 # Leanback Launcher
 PRODUCT_PACKAGES += \

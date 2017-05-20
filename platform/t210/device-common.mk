@@ -89,30 +89,13 @@ PRODUCT_COPY_FILES += \
   $(LOCAL_PATH)/update_js_touch_fw.sh:system/bin/update_js_touch_fw.sh \
   $(LOCAL_PATH)/config_cameras.sh:system/bin/config_cameras.sh
 
-ifeq ($(NV_ANDROID_FRAMEWORK_ENHANCEMENTS),TRUE)
-ifeq ($(BOARD_REMOVES_RESTRICTED_CODEC),true)
-PRODUCT_COPY_FILES += \
-  frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-  frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-  $(LOCAL_PATH)/media_codecs_no_licence.xml:system/etc/media_codecs.xml \
-  $(LOCAL_PATH)/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
-else
 PRODUCT_COPY_FILES += \
   frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
   frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
   $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
   $(LOCAL_PATH)/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
-endif
-else
-PRODUCT_COPY_FILES += \
-  frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-  frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-  $(LOCAL_PATH)/media_codecs_noenhance.xml:system/etc/media_codecs.xml \
-  $(LOCAL_PATH)/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
-endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.bluetooth.rc:root/init.bluetooth.rc \
     $(LOCAL_PATH)/init.e2190.rc:root/init.e2190.rc \
     $(LOCAL_PATH)/init.e2220.rc:root/init.e2220.rc \
     $(LOCAL_PATH)/init.jetson_e.rc:root/init.jetson_e.rc \

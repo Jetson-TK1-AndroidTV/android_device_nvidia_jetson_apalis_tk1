@@ -61,12 +61,8 @@ TARGET_COPY_OUT_VENDOR := vendor
 #TARGET_NVPAYLOAD_UPDATE_LIB := libnvblpayload_updater
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/platform/t210/bluetooth
-#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/nvidia/platform/t210/bluetooth/bcm43241/
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_HCI := true
-#BOARD_HAVE_BLUETOOTH_BCM := true
-#BLUETOOTH_HCI_USE_USB := true
-#BOARD_HAVE_BLUETOOTH_LINUX := true
 
 # powerhal
 BOARD_USES_POWERHAL := true
@@ -87,20 +83,20 @@ BOARD_USES_POWERHAL := true
 #WPA_SUPPLICANT_VERSION ?= VER_0_8_X
 #WIFI_DRIVER_MODULE_PATH ?= auto
 
-# Wifi related defines
+# Broadcom 4356 PCIe Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE           := bcmdhd
 BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
-WIFI_DRIVER_FW_PATH_STA     := "/data/misc/wifi/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP      := "/data/misc/wifi/firmware/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_P2P     := "/data/misc/wifi/firmware/fw_bcmdhd_p2p.bin"
+WIFI_DRIVER_FW_PATH_STA     := "/system/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP      := "/system/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_P2P     := "/system/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_OP_MODE_PARAM   := "/sys/module/bcmdhd/parameters/op_mode"
 WIFI_DRIVER_MODULE_ARG      := "iface_name=wlan0"
 WIFI_DRIVER_MODULE_NAME     := "bcmdhd"
+
 
 
 # Default HDMI mirror mode
